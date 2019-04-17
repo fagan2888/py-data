@@ -1,4 +1,5 @@
 import inspect
+import os
 from inspect import getmodule
 from pathlib import Path
 from shutil import copy2
@@ -9,7 +10,12 @@ from py_data import path
 class Data:
     def __init__(self):
         self.__home = str(Path.home())
-        self.__proj = str(Path.cwd().parent)
+
+        self.__proj = Path.cwd().parent
+        while os.path.isfile(str(self.__proj) + '/__init__.py'):
+            self.__proj = self.__proj.parent
+        self.__proj = str(self.__proj)
+
         self.__data_home = Path(self.__home + '/.proj-data')
         self.__data_proj = Path(self.__proj + '/proj_data')
 
