@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='py_data',
-    version='0.0.1',
+    version='0.0.2',
     description="Common data interface",
     url='https://github.com/uniquetrij/py-data',
     author='Trijeet Modak',
