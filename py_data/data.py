@@ -17,6 +17,7 @@ class Data:
         self.__proj = str(self.__proj)
 
         self.__data_proj = Path(self.__proj + '/proj_data')
+        self.__data_home = Path(self.__home + '/.proj_data')
 
         if not Path.is_dir(self.__data_home):
             Path.mkdir(self.__data_home)
