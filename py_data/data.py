@@ -48,6 +48,6 @@ class Data:
 
         if contents:
             for content in contents:
-                copy2(content, dir)
+                copy2(content, str(dir))
 
         return str(dir)
